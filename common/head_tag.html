@@ -28,7 +28,7 @@
       } else if (queryStrings.match(/status=closed/)) {
         component.set("status", "closed");
       } else {
-        component.set("status", "open");
+        component.set("status", "all");
       }
     },
 
@@ -42,8 +42,8 @@
           return !param.startsWith("status=");
         });
 
-        if (newStatus && newStatus !== "all") {
-          params.push(`status=${newStatus}`);
+        if (newStatus && newStatus == "all") {
+          params.push(`status=open`);
         }
 
         queryStrings = params.length > 0 ? `?${params.join("&")}` : "";
