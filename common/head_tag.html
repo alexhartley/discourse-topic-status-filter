@@ -42,8 +42,8 @@
           return !param.startsWith("status=");
         });
 
-        if (newStatus && newStatus == "all") {
-          params.push(`status=open`);
+        if (newStatus && newStatus !== "all") {
+          params.push(`status=${newStatus}`);
         }
 
         queryStrings = params.length > 0 ? `?${params.join("&")}` : "";
