@@ -16,7 +16,7 @@
     },
 
     setupComponent(args, component) {
-      const statuses = ["all", "open", "closed"].map(status => {
+      const statuses = ["open", "closed", "all"].map(status => {
         return { name: I18n.t(themePrefix(`topic_status_filter.${status}`)), value: status };
       });
       component.set("statuses", statuses);
