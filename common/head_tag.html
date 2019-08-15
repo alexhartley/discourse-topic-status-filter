@@ -20,7 +20,7 @@
         return { name: I18n.t(themePrefix(`topic_status_filter.${status}`)), value: status };
       });
       component.set("statuses", statuses);
-      component.set("status", "open");
+      
       
       const queryStrings = window.location.search;
       if (queryStrings.match(/status=open/)) {
@@ -28,7 +28,7 @@
       } else if (queryStrings.match(/status=closed/)) {
         component.set("status", "closed");
       } else {
-        component.set("status", "all");
+        component.set("status", "open");
       }
     },
 
